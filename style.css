@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cadetblue;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.inputs input ,
+.contents .content {
+    display: none;
+}
+
+.container {
+    width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.labels {
+    display: flex;
+    position: relative;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ddd;
+}
+.labels label {
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+.labels::before {
+    position: absolute;
+    content: "";
+    background-color: brown;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 20%;
+    transition: all .5s;
+}
+
+#input2:checked ~ .labels::before {
+    left: 20%;
+}
+#input3:checked ~ .labels::before {
+    left: 40%;
+}
+#input4:checked ~ .labels::before {
+    left: 60%;
+}
+#input5:checked ~ .labels::before {
+    left: 80%;
+}
+
+.contents {
+    padding: 16px;
+    font-style: 18px;
+
+}
+.contents h3 {
+    color: brown;
+    margin-bottom: 10px;
+}
+.contents p {
+    line-height: 1.6;
+}
+
+
+#input1:checked ~ .contents .content-home {
+    display: block;
+    animation: showcontent 1s forwards;
+}
+#input2:checked ~ .contents .content-about {
+    display: block;
+    animation: showcontent 1s forwards;
+
+}
+#input3:checked ~ .contents .content-team {
+    display: block;
+    animation: showcontent 1s forwards;
+
+}
+#input4:checked ~ .contents .content-contact {
+    display: block;
+    animation: showcontent 1s forwards;
+
+}
+#input5:checked ~ .contents .content-blog {
+    display: block;
+    animation: showcontent 1s forwards;
+
+}
+
+@keyframes showcontent {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
